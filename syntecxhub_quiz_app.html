@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- Viewport supporting accessible zoom up to 5x -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>Syntecxhub - Quiz App</title>
+    <link rel="stylesheet" href="style_quiz.css">
+    <!-- Defer loading of JS for DOM availability -->
+    <script defer src="app_quiz.js"></script>
+</head>
+
+<body>
+
+    <div class="quiz-container">
+        
+        <!-- Main Quiz Card -->
+        <main class="quiz-card js-quiz-card">
+            
+            <!-- Quiz Header -->
+            <header class="quiz-header">
+                <div class="logo">Syntecxhub</div>
+                <h1>Frontend Web Quiz</h1>
+                
+                <!-- Progress Indicator Bar -->
+                <div class="progress-container">
+                    <div class="progress-bar js-progress-bar"></div>
+                </div>
+                
+                <!-- Current Question Indicator -->
+                <div class="question-tracker">
+                    Question <span class="js-current-question-num">1</span> of <span class="js-total-questions-num">5</span>
+                </div>
+            </header>
+
+            <!-- Quiz Main Body (Questions & Options) -->
+            <section class="quiz-body">
+                <!-- Question Text (Decoupled: js- hook) -->
+                <h2 class="question-text js-question-text">Loading question...</h2>
+                
+                <!-- Options list (Decoupled: js- hook) -->
+                <div class="options-container js-options-container">
+                    <!-- Dynamic option buttons will be injected here by JS -->
+                </div>
+            </section>
+
+            <!-- Quiz Controls/Footer -->
+            <footer class="quiz-footer">
+                <!-- Action button (Decoupled: js- hook, is-hidden class state) -->
+                <button class="btn-action btn-submit js-submit-btn is-hidden">Submit Answer</button>
+                <button class="btn-action btn-next js-next-btn is-disabled" disabled>Next Question</button>
+            </footer>
+
+        </main>
+
+        <!-- Final Results Card (Decoupled: is-hidden state class) -->
+        <section class="results-card is-hidden js-results-card">
+            <div class="results-header">
+                <div class="logo">Syntecxhub</div>
+                <h2>Quiz Completed!</h2>
+            </div>
+            
+            <div class="results-body">
+                <div class="score-circle">
+                    <span class="js-final-score">0</span>
+                    <span class="score-label">out of <span class="js-results-total">5</span></span>
+                </div>
+                
+                <!-- Feedback message based on performance -->
+                <p class="feedback-msg js-feedback-msg">Great effort!</p>
+                <p class="summary-details">You answered <span class="js-correct-count">0</span> questions correctly.</p>
+            </div>
+            
+            <footer class="results-footer">
+                <button class="btn-action btn-restart js-restart-btn">Restart Quiz</button>
+            </footer>
+        </section>
+
+    </div>
+
+</body>
+
+</html>
