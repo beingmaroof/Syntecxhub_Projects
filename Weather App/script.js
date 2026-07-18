@@ -1,8 +1,8 @@
-﻿// WeatherNow – script.js
+// WeatherNow – script.js
 // Uses OpenWeatherMap API to fetch live weather data
 // Replace API_KEY below with your own free key from openweathermap.org
 
-const API_KEY = "YOUR_API_KEY_HERE";
+const API_KEY = "7fcd375b934d372ffb9143553cf77a8d";
 const BASE_URL = "https://api.openweathermap.org/data/2.5/weather";
 
 // DOM elements
