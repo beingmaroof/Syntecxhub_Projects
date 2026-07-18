@@ -1,0 +1,136 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="WeatherNow – Get live weather updates for any city in the world." />
+  <title>WeatherNow – Live Weather</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="theme-default">
+
+  <div class="bg-blob blob-1"></div>
+  <div class="bg-blob blob-2"></div>
+  <div class="bg-blob blob-3"></div>
+
+  <div class="container">
+
+    <header class="app-header">
+      <div class="logo">
+        <span class="logo-icon">🌤</span>
+        <span class="logo-text">WeatherNow</span>
+      </div>
+      <p class="tagline">Live weather, anywhere.</p>
+    </header>
+
+    <div class="search-wrapper">
+      <div class="search-box" id="searchBox">
+        <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+        </svg>
+        <input
+          type="text"
+          id="cityInput"
+          class="city-input"
+          placeholder="Search city... (e.g. Mumbai, London)"
+          autocomplete="off"
+          spellcheck="false"
+        />
+        <button class="search-btn" id="searchBtn" aria-label="Search weather">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="error-msg hidden" id="errorMsg" role="alert" aria-live="polite">
+      <span>⚠️</span>
+      <span id="errorText">City not found. Please check the spelling and try again.</span>
+    </div>
+
+    <div class="default-prompt" id="defaultPrompt">
+      <div class="prompt-icon">🌍</div>
+      <p>Search for a city above to see live weather</p>
+    </div>
+
+    <div class="weather-card hidden" id="weatherCard">
+
+      <div class="loading-state hidden" id="loadingState">
+        <div class="spinner"></div>
+        <p>Fetching weather...</p>
+      </div>
+
+      <div class="weather-content" id="weatherContent">
+
+        <div class="card-top">
+          <div class="city-info">
+            <h1 class="city-name" id="cityName">–</h1>
+            <p class="country-name" id="countryName">–</p>
+          </div>
+          <div class="date-info">
+            <p class="current-date" id="currentDate">–</p>
+            <p class="current-time" id="currentTime">–</p>
+          </div>
+        </div>
+
+        <div class="card-middle">
+          <div class="weather-icon-wrap">
+            <img class="weather-icon" id="weatherIcon" src="" alt="Weather icon" />
+            <p class="weather-desc" id="weatherDesc">–</p>
+          </div>
+          <div class="temp-wrap">
+            <span class="temperature" id="temperature">–</span>
+            <span class="temp-unit">°C</span>
+          </div>
+        </div>
+
+        <div class="card-bottom">
+          <div class="stat-item">
+            <div class="stat-icon">💧</div>
+            <div class="stat-info">
+              <span class="stat-value" id="humidity">–</span>
+              <span class="stat-label">Humidity</span>
+            </div>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <div class="stat-icon">🌡️</div>
+            <div class="stat-info">
+              <span class="stat-value" id="feelsLike">–</span>
+              <span class="stat-label">Feels Like</span>
+            </div>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <div class="stat-icon">💨</div>
+            <div class="stat-info">
+              <span class="stat-value" id="windSpeed">–</span>
+              <span class="stat-label">Wind</span>
+            </div>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <div class="stat-icon">👁️</div>
+            <div class="stat-info">
+              <span class="stat-value" id="visibility">–</span>
+              <span class="stat-label">Visibility</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <footer class="app-footer">
+      <p>Data from <a href="https://openweathermap.org" target="_blank" rel="noopener">OpenWeatherMap</a></p>
+    </footer>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
